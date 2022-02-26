@@ -25,6 +25,25 @@ The hook 'boros_closed_site_html' need to be in functions.php in the active them
 Examples
 
 ```
+// custom HTML message
+add_filter('boros_closed_site_html', function(){
+    return '
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Closed</title>
+</head>
+<body>
+<h1>Closed</h1>
+<p>Maintenance</p>
+</body>
+</html>
+    ';
+});
+
 // show predefined message (or custom HTML if 'boros_closed_site_html' hook used):
 define( 'CLOSED_SITE', true );
 
